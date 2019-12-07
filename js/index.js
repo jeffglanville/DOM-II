@@ -32,8 +32,8 @@ anime.addEventListener('mouseleave', (event) => {
     event.target.style.transform = ("rotate(0deg) translateX(0px)")
 })
 
-let h2Headings = document.querySelectorAll('h2');
-h2Headings.forEach(item => {
+let h2P = document.querySelectorAll('p');
+h2P.forEach(item => {
     item.addEventListener('copy', (event) => {
         alert('copied!')
     })
@@ -41,7 +41,7 @@ h2Headings.forEach(item => {
 
 
 let allBody = document.querySelector('body');
-allBody.addEventListener('wheel', (event) => {
+allBody.addEventListener('keydown', (event) => {
     event.target.style.backgroundColor = 'gray';
 })
 
@@ -76,4 +76,27 @@ allBtn.forEach(item => {
 let noContext = document.querySelector('body');
 noContext.addEventListener('contextmenu', (event) => {
     event.preventDefault();
+})
+
+let headings = document.querySelector('.intro img');
+    headings.addEventListener('drag', (event) => {
+    event.target.style.border = '5px solid red';
+
+})
+
+headings.addEventListener('dragend', (event) => {
+    event.target.style.border = '';
+})
+
+let headH2 = document.querySelectorAll('h2');
+headH2.forEach(item => {
+    item.addEventListener('cut', (event) => {
+        event.target.style.color = 'dodgerblue alert("You cut the text")';
+    })
+})
+
+headH2.forEach(item => {
+    item.addEventListener('mouseleave', (event) => {
+        event.target.style.color = 'black';
+    })
 })
